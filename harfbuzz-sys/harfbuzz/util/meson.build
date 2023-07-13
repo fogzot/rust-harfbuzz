@@ -1,40 +1,35 @@
 hb_view_sources = [
   'hb-view.cc',
-  'options.cc',
-  'ansi-print.cc',
-  'helper-cairo.cc',
-  'helper-cairo-ansi.cc',
-  'view-cairo.cc',
 ]
 
 hb_shape_sources = [
   'hb-shape.cc',
-  'options.cc',
+]
+
+hb_info_sources = [
+  'hb-info.cc',
 ]
 
 hb_ot_shape_closure_sources = [
   'hb-ot-shape-closure.cc',
-  'options.cc',
 ]
 
 hb_subset_cli_sources = [
   'hb-subset.cc',
-  'options.cc',
-  'options-subset.cc',
 ]
 
 util_deps = [freetype_dep, cairo_dep, cairo_ft_dep, glib_dep]
 
 if conf.get('HAVE_GLIB', 0) == 1
-  if conf.get('HAVE_FREETYPE', 0) == 1 and conf.get('HAVE_CAIRO_FT', 0) == 1
-
+  if conf.get('HAVE_CAIRO', 0) == 1
     hb_view = executable('hb-view', hb_view_sources,
       cpp_args: cpp_args,
       include_directories: [incconfig, incsrc],
-      dependencies: util_deps,
-      link_with: [libharfbuzz],
+      dependencies: [util_deps, chafa_dep],
+      link_with: [libharfbuzz, libharfbuzz_cairo],
       install: true,
     )
+    meson.override_find_program('hb-view', hb_view)
   endif
 
   hb_shape = executable('hb-shape', hb_shape_sources,
@@ -44,6 +39,16 @@ if conf.get('HAVE_GLIB', 0) == 1
     link_with: [libharfbuzz],
     install: true,
   )
+  meson.override_find_program('hb-shape', hb_shape)
+
+  hb_info = executable('hb-info', [hb_info_sources, gobject_enums_h],
+    cpp_args: cpp_args,
+    include_directories: [incconfig, incsrc],
+    dependencies: [util_deps, libharfbuzz_gobject_dep, chafa_dep],
+    link_with: [libharfbuzz],
+    install: true,
+  )
+  meson.override_find_program('hb-info', hb_info)
 
   hb_subset = executable('hb-subset', hb_subset_cli_sources,
     cpp_args: cpp_args,
@@ -52,6 +57,7 @@ if conf.get('HAVE_GLIB', 0) == 1
     link_with: [libharfbuzz, libharfbuzz_subset],
     install: true,
   )
+  meson.override_find_program('hb-subset', hb_subset)
 
   hb_ot_shape_closure = executable('hb-ot-shape-closure', hb_ot_shape_closure_sources,
     cpp_args: cpp_args,
@@ -60,6 +66,7 @@ if conf.get('HAVE_GLIB', 0) == 1
     link_with: [libharfbuzz],
     install: true,
   )
+  meson.override_find_program('hb-ot-shape-closure', hb_ot_shape_closure)
 else
   # Disable tests that use this
   hb_shape = disabler()

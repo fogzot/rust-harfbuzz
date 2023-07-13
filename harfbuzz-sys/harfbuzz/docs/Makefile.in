@@ -113,8 +113,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@HAVE_GOBJECT_FALSE@am__append_1 = hb-gobject.h hb-gobject-enums.h hb-gobject-structs.h
-@HAVE_GOBJECT_TRUE@am__append_2 = $(top_builddir)/src/libharfbuzz-gobject.la
+@HAVE_GOBJECT_TRUE@am__append_1 = $(top_builddir)/src/libharfbuzz-gobject.la
 subdir = docs
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_link_flag.m4 \
@@ -169,6 +168,8 @@ CAIRO_LIBS = @CAIRO_LIBS@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
+CHAFA_CFLAGS = @CHAFA_CFLAGS@
+CHAFA_LIBS = @CHAFA_LIBS@
 CODE_COVERAGE_CFLAGS = @CODE_COVERAGE_CFLAGS@
 CODE_COVERAGE_CPPFLAGS = @CODE_COVERAGE_CPPFLAGS@
 CODE_COVERAGE_CXXFLAGS = @CODE_COVERAGE_CXXFLAGS@
@@ -186,8 +187,6 @@ CXXFLAGS = @CXXFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
-DIRECTWRITE_CXXFLAGS = @DIRECTWRITE_CXXFLAGS@
-DIRECTWRITE_LIBS = @DIRECTWRITE_LIBS@
 DLLTOOL = @DLLTOOL@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
@@ -197,8 +196,6 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
-FONTCONFIG_CFLAGS = @FONTCONFIG_CFLAGS@
-FONTCONFIG_LIBS = @FONTCONFIG_LIBS@
 FREETYPE_CFLAGS = @FREETYPE_CFLAGS@
 FREETYPE_DEPS = @FREETYPE_DEPS@
 FREETYPE_LIBS = @FREETYPE_LIBS@
@@ -287,6 +284,8 @@ STRIP = @STRIP@
 UNISCRIBE_CFLAGS = @UNISCRIBE_CFLAGS@
 UNISCRIBE_LIBS = @UNISCRIBE_LIBS@
 VERSION = @VERSION@
+WASM_CFLAGS = @WASM_CFLAGS@
+WASM_LIBS = @WASM_LIBS@
 _GI_EXP_DATADIR = @_GI_EXP_DATADIR@
 _GI_EXP_LIBDIR = @_GI_EXP_LIBDIR@
 abs_builddir = @abs_builddir@
@@ -375,13 +374,14 @@ SCANGOBJ_OPTIONS =
 # Extra options to supply to gtkdoc-scan.
 # e.g. SCAN_OPTIONS=--deprecated-guards="GTK_DISABLE_DEPRECATED"
 SCAN_OPTIONS = --rebuild-types --deprecated-guards="HB_DISABLE_DEPRECATED" \
-	--ignore-decorators="HB_EXTERN"
+	--ignore-decorators='HB_EXTERN|HB_DEPRECATED|HB_DEPRECATED_FOR()'
 
 
 # Header files or dirs to ignore when scanning. Use base file/dir names
 # e.g. IGNORE_HFILES=gtkdebug.h gtkintl.h private_code
 IGNORE_HFILES = `cd $(top_srcdir)/src; find . -path './*/*.h' | sed \
-	's@^.*/@@'` $(am__append_1)
+	's@^.*/@@'` hb-gobject.h hb-gobject-enums.h \
+	hb-gobject-structs.h
 
 # Extra options to supply to gtkdoc-mkdb.
 # e.g. MKDB_OPTIONS=--xml-mode --output-format=xml
@@ -432,7 +432,7 @@ content_files = \
 	version.xml
 
 
-# SGML files where gtk-doc abbrevations (#GtkWidget) are expanded
+# SGML files where gtk-doc abbreviations (#GtkWidget) are expanded
 # These files must be listed here *and* in content_files
 # e.g. expand_content_files=running.sgml
 expand_content_files = 
@@ -443,7 +443,7 @@ expand_content_files =
 # e.g. GTKDOC_CFLAGS=-I$(top_srcdir) -I$(top_builddir) $(GTK_DEBUG_FLAGS)
 # e.g. GTKDOC_LIBS=$(top_builddir)/gtk/$(gtktargetlib)
 GTKDOC_CFLAGS = 
-GTKDOC_LIBS = $(top_builddir)/src/libharfbuzz.la $(am__append_2)
+GTKDOC_LIBS = $(top_builddir)/src/libharfbuzz.la $(am__append_1)
 @GTK_DOC_USE_LIBTOOL_FALSE@GTKDOC_CC = $(CC) $(INCLUDES) $(GTKDOC_DEPS_CFLAGS) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 @GTK_DOC_USE_LIBTOOL_TRUE@GTKDOC_CC = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(INCLUDES) $(GTKDOC_DEPS_CFLAGS) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 @GTK_DOC_USE_LIBTOOL_FALSE@GTKDOC_LD = $(CC) $(GTKDOC_DEPS_LIBS) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS)

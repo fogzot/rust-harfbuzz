@@ -89,16 +89,41 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-TESTS = tests/basics.tests tests/cbdt.tests tests/cff-full-font.tests \
-	tests/cff-japanese.tests tests/cmap.tests tests/cmap14.tests \
-	tests/colr.tests tests/full-font.tests tests/japanese.tests \
-	tests/layout.context.tests tests/layout.gdef-attachlist.tests \
+TESTS = tests/32bit_var_store.tests tests/basics.tests \
+	tests/preprocess.tests tests/cbdt.tests \
+	tests/cff-full-font.tests tests/cff-japanese.tests \
+	tests/cff.notoserifmyanmar.tests tests/cmap.tests \
+	tests/cmap14.tests tests/colr.tests tests/colr_glyphs.tests \
+	tests/colrv1.tests tests/colrv1_copy_varstore.tests \
+	tests/colr_with_components.tests tests/full-font.tests \
+	tests/glyf_bug_3131.tests tests/japanese.tests \
+	tests/layout.context.tests tests/layout.context_format2.tests \
+	tests/layout.gdef-attachlist.tests \
 	tests/layout.gdef-varstore.tests tests/layout.gdef.tests \
-	tests/layout.gpos.tests tests/layout.gpos2.tests \
-	tests/layout.gpos3.tests tests/layout.gpos4.tests \
+	tests/layout.gdef.glyphset.tests tests/layout.gpos.tests \
+	tests/layout.gpos2.tests tests/layout.gpos3.tests \
+	tests/layout.gpos4.tests tests/layout.gpos5.tests \
 	tests/layout.gpos6.tests tests/layout.gpos8.tests \
-	tests/layout.gsub3.tests tests/layout.gsub6.tests \
-	tests/layout.tests tests/sbix.tests $(am__EXEEXT_1)
+	tests/layout.gpos8.amiri.tests tests/layout.gpos9.tests \
+	tests/layout.gsub3.tests tests/layout.gsub5.tests \
+	tests/layout.gsub5_format2.tests tests/layout.gsub6.tests \
+	tests/layout.gsub8.tests tests/layout.khmer.tests \
+	tests/layout.notonastaliqurdu.tests tests/layout.tests \
+	tests/layout.tinos.tests tests/layout.duplicate_features.tests \
+	tests/layout.unsorted_featurelist.tests \
+	tests/layout.drop_feature.tests tests/no_layout_closure.tests \
+	tests/sbix.tests tests/variable.tests tests/glyph_names.tests \
+	tests/math.tests tests/math_coverage_offset.tests \
+	tests/post.tests tests/full_instance.tests \
+	tests/instance_feature_variations.tests \
+	tests/instantiate_glyf.tests tests/instantiate_cff2.tests \
+	tests/pin_all_at_default.tests \
+	tests/instance_no_double_free.tests \
+	tests/mvar_full_instance.tests \
+	tests/instance_comp_glyph_empty_child.tests \
+	tests/post_apply_mvar_delta.tests tests/apply_cvar_delta.tests \
+	tests/collect_name_ids.tests tests/instantiate_colrv1.tests \
+	tests/instantiate_cff2_update_metrics.tests $(am__EXEEXT_1)
 XFAIL_TESTS = $(am__EXEEXT_1)
 subdir = test/subset/data
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -415,6 +440,8 @@ CAIRO_LIBS = @CAIRO_LIBS@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
+CHAFA_CFLAGS = @CHAFA_CFLAGS@
+CHAFA_LIBS = @CHAFA_LIBS@
 CODE_COVERAGE_CFLAGS = @CODE_COVERAGE_CFLAGS@
 CODE_COVERAGE_CPPFLAGS = @CODE_COVERAGE_CPPFLAGS@
 CODE_COVERAGE_CXXFLAGS = @CODE_COVERAGE_CXXFLAGS@
@@ -432,8 +459,6 @@ CXXFLAGS = @CXXFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
-DIRECTWRITE_CXXFLAGS = @DIRECTWRITE_CXXFLAGS@
-DIRECTWRITE_LIBS = @DIRECTWRITE_LIBS@
 DLLTOOL = @DLLTOOL@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
@@ -443,8 +468,6 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
-FONTCONFIG_CFLAGS = @FONTCONFIG_CFLAGS@
-FONTCONFIG_LIBS = @FONTCONFIG_LIBS@
 FREETYPE_CFLAGS = @FREETYPE_CFLAGS@
 FREETYPE_DEPS = @FREETYPE_DEPS@
 FREETYPE_LIBS = @FREETYPE_LIBS@
@@ -533,6 +556,8 @@ STRIP = @STRIP@
 UNISCRIBE_CFLAGS = @UNISCRIBE_CFLAGS@
 UNISCRIBE_LIBS = @UNISCRIBE_LIBS@
 VERSION = @VERSION@
+WASM_CFLAGS = @WASM_CFLAGS@
+WASM_LIBS = @WASM_LIBS@
 _GI_EXP_DATADIR = @_GI_EXP_DATADIR@
 _GI_EXP_LIBDIR = @_GI_EXP_LIBDIR@
 abs_builddir = @abs_builddir@
@@ -592,20 +617,46 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 NULL = 
-EXTRA_DIST = $(TESTS) expected/basics expected/full-font \
-	expected/cff-full-font expected/japanese expected/cff-japanese \
-	expected/layout expected/layout.gpos expected/layout.gpos2 \
+EXTRA_DIST = $(TESTS) $(DISABLED_TESTS) expected/32bit_var_store \
+	expected/basics expected/preprocess expected/full-font \
+	expected/glyf_bug_3131 expected/cff-full-font \
+	expected/japanese expected/cff-japanese \
+	expected/cff.notoserifmyanmar expected/layout \
+	expected/layout.gpos expected/layout.gpos2 \
 	expected/layout.gpos3 expected/layout.gpos4 \
-	expected/layout.gpos6 expected/layout.gpos8 \
-	expected/layout.gsub3 expected/layout.gsub6 \
-	expected/layout.gdef expected/layout.context \
-	expected/layout.gdef-varstore expected/layout.gdef-attachlist \
+	expected/layout.gpos5 expected/layout.gpos6 \
+	expected/layout.gpos8 expected/layout.gpos8.amiri \
+	expected/layout.gpos9 expected/layout.gsub3 \
+	expected/layout.gsub5 expected/layout.gsub5_format2 \
+	expected/layout.gsub6 expected/layout.gsub8 \
+	expected/layout.khmer expected/layout.gdef \
+	expected/layout.gdef.glyphset expected/layout.context \
+	expected/layout.context_format2 expected/layout.gdef-varstore \
+	expected/layout.gdef-attachlist \
+	expected/layout.notonastaliqurdu expected/layout.tinos \
+	expected/layout.duplicate_features \
+	expected/layout.unsorted_featurelist \
+	expected/layout.drop_feature expected/no_layout_closure \
 	expected/cmap expected/cmap14 expected/sbix expected/colr \
-	expected/cbdt fonts profiles $(NULL)
+	expected/colr_glyphs expected/colrv1 \
+	expected/colrv1_copy_varstore expected/colr_with_components \
+	expected/cbdt expected/variable expected/glyph_names \
+	expected/math expected/math_coverage_offset expected/post \
+	expected/full_instance expected/instance_feature_variations \
+	expected/instantiate_glyf expected/instantiate_cff2 \
+	expected/pin_all_at_default expected/instance_no_double_free \
+	expected/mvar_full_instance \
+	expected/instance_comp_glyph_empty_child \
+	expected/post_apply_mvar_delta expected/apply_cvar_delta \
+	expected/collect_name_ids expected/instantiate_colrv1 \
+	expected/instantiate_cff2_update_metrics fonts profiles \
+	$(NULL)
 CLEANFILES = 
-SUBDIRS = 
+SUBDIRS = repack_tests
 TEST_EXTENSIONS = .tests
 TESTS_LOG_COMPILER = $(srcdir)/../run-tests.py $(top_builddir)/util/hb-subset$(EXEEXT)
+
+# Disabled because instancing is only available w/ experimental API on.
 DISABLED_TESTS = \
 	$(NULL)
 
@@ -1087,6 +1138,10 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
+
+# TODO: re-able once colrv1 subsetting is stabilized.
+#      	expected/colrv1
+#   	expected/colrv1.notoemoji
 
 # Convenience targets:
 lib:

@@ -5,8 +5,8 @@
 <title>API Index: HarfBuzz Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="HarfBuzz Manual">
-<link rel="up" href="pt02.html" title="Part II. Reference manual">
-<link rel="prev" href="harfbuzz-hb-directwrite.html" title="hb-directwrite">
+<link rel="up" href="reference-manual.html" title="Part II. Reference manual">
+<link rel="prev" href="harfbuzz-hb-subset.html" title="hb-subset">
 <link rel="next" href="deprecated-api-index.html" title="Index of deprecated API">
 <meta name="generator" content="GTK-Doc V1.32 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
@@ -24,6 +24,8 @@
                   <a class="shortcut" href="#idxF">F</a>
                      <span class="dim">|</span> 
                   <a class="shortcut" href="#idxG">G</a>
+                     <span class="dim">|</span> 
+                  <a class="shortcut" href="#idxH">H</a>
                      <span class="dim">|</span> 
                   <a class="shortcut" href="#idxI">I</a>
                      <span class="dim">|</span> 
@@ -45,8 +47,8 @@
                      <span class="dim">|</span> 
                   <a class="shortcut" href="#idxV">V</a></span></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
-<td><a accesskey="u" href="pt02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
-<td><a accesskey="p" href="harfbuzz-hb-directwrite.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="reference-manual.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="harfbuzz-hb-subset.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
 <td><a accesskey="n" href="deprecated-api-index.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="index">
@@ -104,6 +106,14 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-blob.html#hb-blob-create-from-file" title="hb_blob_create_from_file ()">hb_blob_create_from_file</a>, function in <a class="link" href="harfbuzz-hb-blob.html" title="hb-blob">hb-blob</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-blob.html#hb-blob-create-from-file-or-fail" title="hb_blob_create_from_file_or_fail ()">hb_blob_create_from_file_or_fail</a>, function in <a class="link" href="harfbuzz-hb-blob.html" title="hb-blob">hb-blob</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-blob.html#hb-blob-create-or-fail" title="hb_blob_create_or_fail ()">hb_blob_create_or_fail</a>, function in <a class="link" href="harfbuzz-hb-blob.html" title="hb-blob">hb-blob</a>
 </dt>
 <dd></dd>
 <dt>
@@ -207,6 +217,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-buffer.html#hb-buffer-create-similar" title="hb_buffer_create_similar ()">hb_buffer_create_similar</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-buffer.html#hb-buffer-deserialize-glyphs" title="hb_buffer_deserialize_glyphs ()">hb_buffer_deserialize_glyphs</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
 </dt>
 <dd></dd>
@@ -272,6 +286,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-buffer.html#hb-buffer-get-length" title="hb_buffer_get_length ()">hb_buffer_get_length</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-buffer.html#hb-buffer-get-not-found-glyph" title="hb_buffer_get_not_found_glyph ()">hb_buffer_get_not_found_glyph</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
 </dt>
 <dd></dd>
 <dt>
@@ -407,6 +425,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-buffer.html#hb-buffer-set-not-found-glyph" title="hb_buffer_set_not_found_glyph ()">hb_buffer_set_not_found_glyph</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-buffer.html#hb-buffer-set-replacement-codepoint" title="hb_buffer_set_replacement_codepoint ()">hb_buffer_set_replacement_codepoint</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
 </dt>
 <dd></dd>
@@ -432,6 +454,50 @@
 <dd></dd>
 <a name="idxC"></a><h3 class="title">C</h3>
 <dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-create-for-face" title="hb_cairo_font_face_create_for_face ()">hb_cairo_font_face_create_for_face</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-create-for-font" title="hb_cairo_font_face_create_for_font ()">hb_cairo_font_face_create_for_font</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-get-face" title="hb_cairo_font_face_get_face ()">hb_cairo_font_face_get_face</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-get-font" title="hb_cairo_font_face_get_font ()">hb_cairo_font_face_get_font</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-get-scale-factor" title="hb_cairo_font_face_get_scale_factor ()">hb_cairo_font_face_get_scale_factor</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-set-font-init-func" title="hb_cairo_font_face_set_font_init_func ()">hb_cairo_font_face_set_font_init_func</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-face-set-scale-factor" title="hb_cairo_font_face_set_scale_factor ()">hb_cairo_font_face_set_scale_factor</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-font-init-func-t" title="hb_cairo_font_init_func_t ()">hb_cairo_font_init_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-glyphs-from-buffer" title="hb_cairo_glyphs_from_buffer ()">hb_cairo_glyphs_from_buffer</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-cairo.html#hb-cairo-scaled-font-get-font" title="hb_cairo_scaled_font_get_font ()">hb_cairo_scaled_font_get_font</a>, function in <a class="link" href="harfbuzz-hb-cairo.html" title="hb-cairo">hb-cairo</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-common.html#HB-CODEPOINT-INVALID:CAPS" title="HB_CODEPOINT_INVALID">HB_CODEPOINT_INVALID</a>, macro in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-common.html#hb-codepoint-t" title="hb_codepoint_t">hb_codepoint_t</a>, typedef in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
 </dt>
 <dd></dd>
@@ -453,6 +519,30 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-color.html#hb-color-get-red" title="hb_color_get_red ()">hb_color_get_red</a>, function in <a class="link" href="harfbuzz-hb-ot-color.html" title="hb-ot-color">hb-ot-color</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-color-line-get-color-stops" title="hb_color_line_get_color_stops ()">hb_color_line_get_color_stops</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-color-line-get-color-stops-func-t" title="hb_color_line_get_color_stops_func_t ()">hb_color_line_get_color_stops_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-color-line-get-extend" title="hb_color_line_get_extend ()">hb_color_line_get_extend</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-color-line-get-extend-func-t" title="hb_color_line_get_extend_func_t ()">hb_color_line_get_extend_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-color-line-t" title="hb_color_line_t">hb_color_line_t</a>, typedef in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-color-stop-t" title="hb_color_stop_t">hb_color_stop_t</a>, struct in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
 </dt>
 <dd></dd>
 <dt>
@@ -536,6 +626,110 @@
 <a class="link" href="harfbuzz-hb-directwrite.html#hb-directwrite-face-get-font-face" title="hb_directwrite_face_get_font_face ()">hb_directwrite_face_get_font_face</a>, function in <a class="link" href="harfbuzz-hb-directwrite.html" title="hb-directwrite">hb-directwrite</a>
 </dt>
 <dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-close-path" title="hb_draw_close_path ()">hb_draw_close_path</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-close-path-func-t" title="hb_draw_close_path_func_t ()">hb_draw_close_path_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-cubic-to" title="hb_draw_cubic_to ()">hb_draw_cubic_to</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-cubic-to-func-t" title="hb_draw_cubic_to_func_t ()">hb_draw_cubic_to_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-create" title="hb_draw_funcs_create ()">hb_draw_funcs_create</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-destroy" title="hb_draw_funcs_destroy ()">hb_draw_funcs_destroy</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-get-empty" title="hb_draw_funcs_get_empty ()">hb_draw_funcs_get_empty</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-get-user-data" title="hb_draw_funcs_get_user_data ()">hb_draw_funcs_get_user_data</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-is-immutable" title="hb_draw_funcs_is_immutable ()">hb_draw_funcs_is_immutable</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-make-immutable" title="hb_draw_funcs_make_immutable ()">hb_draw_funcs_make_immutable</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-reference" title="hb_draw_funcs_reference ()">hb_draw_funcs_reference</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-set-close-path-func" title="hb_draw_funcs_set_close_path_func ()">hb_draw_funcs_set_close_path_func</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-set-cubic-to-func" title="hb_draw_funcs_set_cubic_to_func ()">hb_draw_funcs_set_cubic_to_func</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-set-line-to-func" title="hb_draw_funcs_set_line_to_func ()">hb_draw_funcs_set_line_to_func</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-set-move-to-func" title="hb_draw_funcs_set_move_to_func ()">hb_draw_funcs_set_move_to_func</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-set-quadratic-to-func" title="hb_draw_funcs_set_quadratic_to_func ()">hb_draw_funcs_set_quadratic_to_func</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-set-user-data" title="hb_draw_funcs_set_user_data ()">hb_draw_funcs_set_user_data</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-funcs-t" title="hb_draw_funcs_t">hb_draw_funcs_t</a>, typedef in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-line-to" title="hb_draw_line_to ()">hb_draw_line_to</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-line-to-func-t" title="hb_draw_line_to_func_t ()">hb_draw_line_to_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-move-to" title="hb_draw_move_to ()">hb_draw_move_to</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-move-to-func-t" title="hb_draw_move_to_func_t ()">hb_draw_move_to_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-quadratic-to" title="hb_draw_quadratic_to ()">hb_draw_quadratic_to</a>, function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-quadratic-to-func-t" title="hb_draw_quadratic_to_func_t ()">hb_draw_quadratic_to_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#HB-DRAW-STATE-DEFAULT:CAPS" title="HB_DRAW_STATE_DEFAULT">HB_DRAW_STATE_DEFAULT</a>, macro in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-draw.html#hb-draw-state-t" title="hb_draw_state_t">hb_draw_state_t</a>, struct in <a class="link" href="harfbuzz-hb-draw.html" title="hb-draw">hb-draw</a>
+</dt>
+<dd></dd>
 <a name="idxF"></a><h3 class="title">F</h3>
 <dt>
 <a class="link" href="harfbuzz-hb-face.html#hb-face-builder-add-table" title="hb_face_builder_add_table ()">hb_face_builder_add_table</a>, function in <a class="link" href="harfbuzz-hb-face.html" title="hb-face">hb-face</a>
@@ -543,6 +737,14 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-face.html#hb-face-builder-create" title="hb_face_builder_create ()">hb_face_builder_create</a>, function in <a class="link" href="harfbuzz-hb-face.html" title="hb-face">hb-face</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-face.html#hb-face-builder-sort-tables" title="hb_face_builder_sort_tables ()">hb_face_builder_sort_tables</a>, function in <a class="link" href="harfbuzz-hb-face.html" title="hb-face">hb-face</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-face.html#hb-face-collect-nominal-glyph-mapping" title="hb_face_collect_nominal_glyph_mapping ()">hb_face_collect_nominal_glyph_mapping</a>, function in <a class="link" href="harfbuzz-hb-face.html" title="hb-face">hb-face</a>
 </dt>
 <dd></dd>
 <dt>
@@ -662,6 +864,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-changed" title="hb_font_changed ()">hb_font_changed</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-create" title="hb_font_create ()">hb_font_create</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
@@ -671,6 +877,14 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-destroy" title="hb_font_destroy ()">hb_font_destroy</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-draw-glyph" title="hb_font_draw_glyph ()">hb_font_draw_glyph</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-draw-glyph-func-t" title="hb_font_draw_glyph_func_t ()">hb_font_draw_glyph_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
 <dt>
@@ -706,6 +920,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-funcs-set-draw-glyph-func" title="hb_font_funcs_set_draw_glyph_func ()">hb_font_funcs_set_draw_glyph_func</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-funcs-set-font-h-extents-func" title="hb_font_funcs_set_font_h_extents_func ()">hb_font_funcs_set_font_h_extents_func</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
@@ -726,6 +944,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-font-funcs-set-glyph-func" title="hb_font_funcs_set_glyph_func ()">hb_font_funcs_set_glyph_func</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-funcs-set-glyph-h-advances-func" title="hb_font_funcs_set_glyph_h_advances_func ()">hb_font_funcs_set_glyph_h_advances_func</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
@@ -743,6 +965,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-funcs-set-glyph-name-func" title="hb_font_funcs_set_glyph_name_func ()">hb_font_funcs_set_glyph_name_func</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-font-funcs-set-glyph-shape-func" title="hb_font_funcs_set_glyph_shape_func ()">hb_font_funcs_set_glyph_shape_func</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -767,6 +993,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-funcs-set-nominal-glyph-func" title="hb_font_funcs_set_nominal_glyph_func ()">hb_font_funcs_set_nominal_glyph_func</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-funcs-set-paint-glyph-func" title="hb_font_funcs_set_paint_glyph_func ()">hb_font_funcs_set_paint_glyph_func</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
 <dt>
@@ -918,6 +1148,14 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-font-get-glyph-shape" title="hb_font_get_glyph_shape ()">hb_font_get_glyph_shape</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-font-get-glyph-shape-func-t" title="hb_font_get_glyph_shape_func_t ()">hb_font_get_glyph_shape_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-get-glyph-v-advance" title="hb_font_get_glyph_v_advance ()">hb_font_get_glyph_v_advance</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
@@ -986,6 +1224,18 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-get-serial" title="hb_font_get_serial ()">hb_font_get_serial</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-get-synthetic-bold" title="hb_font_get_synthetic_bold ()">hb_font_get_synthetic_bold</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-get-synthetic-slant" title="hb_font_get_synthetic_slant ()">hb_font_get_synthetic_slant</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-get-user-data" title="hb_font_get_user_data ()">hb_font_get_user_data</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
@@ -1006,6 +1256,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-get-var-named-instance" title="hb_font_get_var_named_instance ()">hb_font_get_var_named_instance</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-get-v-extents" title="hb_font_get_v_extents ()">hb_font_get_v_extents</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
@@ -1023,6 +1277,18 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-make-immutable" title="hb_font_make_immutable ()">hb_font_make_immutable</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#HB-FONT-NO-VAR-NAMED-INSTANCE:CAPS" title="HB_FONT_NO_VAR_NAMED_INSTANCE">HB_FONT_NO_VAR_NAMED_INSTANCE</a>, macro in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-paint-glyph" title="hb_font_paint_glyph ()">hb_font_paint_glyph</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-paint-glyph-func-t" title="hb_font_paint_glyph_func_t ()">hb_font_paint_glyph_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1058,7 +1324,19 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-set-synthetic-bold" title="hb_font_set_synthetic_bold ()">hb_font_set_synthetic_bold</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-set-synthetic-slant" title="hb_font_set_synthetic_slant ()">hb_font_set_synthetic_slant</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-font.html#hb-font-set-user-data" title="hb_font_set_user_data ()">hb_font_set_user_data</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-font.html#hb-font-set-variation" title="hb_font_set_variation ()">hb_font_set_variation</a>, function in <a class="link" href="harfbuzz-hb-font.html" title="hb-font">hb-font</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1133,6 +1411,10 @@
 <a class="link" href="harfbuzz-hb-ft.html#hb-ft-font-unlock-face" title="hb_ft_font_unlock_face ()">hb_ft_font_unlock_face</a>, function in <a class="link" href="harfbuzz-hb-ft.html" title="hb-ft">hb-ft</a>
 </dt>
 <dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ft.html#hb-ft-hb-font-changed" title="hb_ft_hb_font_changed ()">hb_ft_hb_font_changed</a>, function in <a class="link" href="harfbuzz-hb-ft.html" title="hb-ft">hb-ft</a>
+</dt>
+<dd></dd>
 <a name="idxG"></a><h3 class="title">G</h3>
 <dt>
 <a class="link" href="harfbuzz-hb-gdi.html#hb-gdi-face-create" title="hb_gdi_face_create ()">hb_gdi_face_create</a>, function in <a class="link" href="harfbuzz-hb-gdi.html" title="hb-gdi">hb-gdi</a>
@@ -1179,7 +1461,20 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-graphite2.html#hb-graphite2-font-get-gr-font" title="hb_graphite2_font_get_gr_font ()">hb_graphite2_font_get_gr_font</a>, function in <a class="link" href="harfbuzz-hb-graphite2.html" title="hb-graphite2">hb-graphite2</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-graphite2.html#HB-GRAPHITE2-TAG-SILF:CAPS" title="HB_GRAPHITE2_TAG_SILF">HB_GRAPHITE2_TAG_SILF</a>, macro in <a class="link" href="harfbuzz-hb-graphite2.html" title="hb-graphite2">hb-graphite2</a>
+</dt>
+<dd></dd>
+<a name="idxH"></a><h3 class="title">H</h3>
+<dt>
+<a class="link" href="harfbuzz-hb-features.html#HB-HAS-FREETYPE:CAPS" title="HB_HAS_FREETYPE">HB_HAS_FREETYPE</a>, macro in <a class="link" href="harfbuzz-hb-features.html" title="hb-features">hb-features</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-features.html#HB-HAS-GLIB:CAPS" title="HB_HAS_GLIB">HB_HAS_GLIB</a>, macro in <a class="link" href="harfbuzz-hb-features.html" title="hb-features">hb-features</a>
 </dt>
 <dd></dd>
 <a name="idxI"></a><h3 class="title">I</h3>
@@ -1209,6 +1504,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-common.html#hb-language-matches" title="hb_language_matches ()">hb_language_matches</a>, function in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-common.html#hb-language-t" title="hb_language_t">hb_language_t</a>, typedef in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
 </dt>
 <dd></dd>
@@ -1223,6 +1522,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-map.html#hb-map-clear" title="hb_map_clear ()">hb_map_clear</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-copy" title="hb_map_copy ()">hb_map_copy</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1258,7 +1561,23 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-hash" title="hb_map_hash ()">hb_map_hash</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-map.html#hb-map-is-empty" title="hb_map_is_empty ()">hb_map_is_empty</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-is-equal" title="hb_map_is_equal ()">hb_map_is_equal</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-keys" title="hb_map_keys ()">hb_map_keys</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-next" title="hb_map_next ()">hb_map_next</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1275,6 +1594,14 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-map.html#hb-map-t" title="hb_map_t">hb_map_t</a>, typedef in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-update" title="hb_map_update ()">hb_map_update</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-map.html#hb-map-values" title="hb_map_values ()">hb_map_values</a>, function in <a class="link" href="harfbuzz-hb-map.html" title="hb-map">hb-map</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1299,6 +1626,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-color.html#hb-ot-color-glyph-has-paint" title="hb_ot_color_glyph_has_paint ()">hb_ot_color_glyph_has_paint</a>, function in <a class="link" href="harfbuzz-hb-ot-color.html" title="hb-ot-color">hb-ot-color</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-color.html#hb-ot-color-glyph-reference-png" title="hb_ot_color_glyph_reference_png ()">hb_ot_color_glyph_reference_png</a>, function in <a class="link" href="harfbuzz-hb-ot-color.html" title="hb-ot-color">hb-ot-color</a>
 </dt>
 <dd></dd>
@@ -1308,6 +1639,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-color.html#hb-ot-color-has-layers" title="hb_ot_color_has_layers ()">hb_ot_color_has_layers</a>, function in <a class="link" href="harfbuzz-hb-ot-color.html" title="hb-ot-color">hb-ot-color</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-color.html#hb-ot-color-has-paint" title="hb_ot_color_has_paint ()">hb_ot_color_has_paint</a>, function in <a class="link" href="harfbuzz-hb-ot-color.html" title="hb-ot-color">hb-ot-color</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1395,11 +1730,35 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-baseline2" title="hb_ot_layout_get_baseline2 ()">hb_ot_layout_get_baseline2</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-baseline-with-fallback" title="hb_ot_layout_get_baseline_with_fallback ()">hb_ot_layout_get_baseline_with_fallback</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-baseline-with-fallback2" title="hb_ot_layout_get_baseline_with_fallback2 ()">hb_ot_layout_get_baseline_with_fallback2</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-font-extents" title="hb_ot_layout_get_font_extents ()">hb_ot_layout_get_font_extents</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-font-extents2" title="hb_ot_layout_get_font_extents2 ()">hb_ot_layout_get_font_extents2</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-glyphs-in-class" title="hb_ot_layout_get_glyphs_in_class ()">hb_ot_layout_get_glyphs_in_class</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-glyph-class" title="hb_ot_layout_get_glyph_class ()">hb_ot_layout_get_glyph_class</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-get-horizontal-baseline-tag-for-script" title="hb_ot_layout_get_horizontal_baseline_tag_for_script ()">hb_ot_layout_get_horizontal_baseline_tag_for_script</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1412,10 +1771,6 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-glyph-class-t" title="enum hb_ot_layout_glyph_class_t">hb_ot_layout_glyph_class_t</a>, enum in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
-</dt>
-<dd></dd>
-<dt>
-<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-glyph-sequence-func-t" title="hb_ot_layout_glyph_sequence_func_t ()">hb_ot_layout_glyph_sequence_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1463,6 +1818,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-lookup-get-optical-bound" title="hb_ot_layout_lookup_get_optical_bound ()">hb_ot_layout_lookup_get_optical_bound</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-lookup-substitute-closure" title="hb_ot_layout_lookup_substitute_closure ()">hb_ot_layout_lookup_substitute_closure</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
 </dt>
 <dd></dd>
@@ -1483,11 +1842,23 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-script-find-language" title="hb_ot_layout_script_find_language ()">hb_ot_layout_script_find_language</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-script-get-language-tags" title="hb_ot_layout_script_get_language_tags ()">hb_ot_layout_script_get_language_tags</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-script-select-language" title="hb_ot_layout_script_select_language ()">hb_ot_layout_script_select_language</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-layout-script-select-language2" title="hb_ot_layout_script_select_language2 ()">hb_ot_layout_script_select_language2</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-ot-layout-table-choose-script" title="hb_ot_layout_table_choose_script ()">hb_ot_layout_table_choose_script</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1535,6 +1906,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-math.html#hb-ot-math-get-glyph-kernings" title="hb_ot_math_get_glyph_kernings ()">hb_ot_math_get_glyph_kernings</a>, function in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-math.html#hb-ot-math-get-glyph-top-accent-attachment" title="hb_ot_math_get_glyph_top_accent_attachment ()">hb_ot_math_get_glyph_top_accent_attachment</a>, function in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
 </dt>
 <dd></dd>
@@ -1567,11 +1942,15 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-math.html#hb-ot-math-kern-entry-t" title="hb_ot_math_kern_entry_t">hb_ot_math_kern_entry_t</a>, struct in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-math.html#hb-ot-math-kern-t" title="enum hb_ot_math_kern_t">hb_ot_math_kern_t</a>, enum in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
 </dt>
 <dd></dd>
 <dt>
-<a class="link" href="harfbuzz-hb-ot-math.html#HB-OT-MATH-SCRIPT:CAPS" title="HB_OT_MATH_SCRIPT">HB_OT_MATH_SCRIPT</a>, macro in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
+<a class="link" href="harfbuzz-hb-deprecated.html#HB-OT-MATH-SCRIPT:CAPS" title="HB_OT_MATH_SCRIPT">HB_OT_MATH_SCRIPT</a>, macro in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1596,6 +1975,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-metrics.html#hb-ot-metrics-get-position" title="hb_ot_metrics_get_position ()">hb_ot_metrics_get_position</a>, function in <a class="link" href="harfbuzz-hb-ot-metrics.html" title="hb-ot-metrics">hb-ot-metrics</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-metrics.html#hb-ot-metrics-get-position-with-fallback" title="hb_ot_metrics_get_position_with_fallback ()">hb_ot_metrics_get_position_with_fallback</a>, function in <a class="link" href="harfbuzz-hb-ot-metrics.html" title="hb-ot-metrics">hb-ot-metrics</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1631,6 +2014,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-ot-name.html#hb-ot-name-id-predefined-t" title="enum hb_ot_name_id_predefined_t">hb_ot_name_id_predefined_t</a>, enum in <a class="link" href="harfbuzz-hb-ot-name.html" title="hb-ot-name">hb-ot-name</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-name.html#hb-ot-name-id-t" title="hb_ot_name_id_t">hb_ot_name_id_t</a>, typedef in <a class="link" href="harfbuzz-hb-ot-name.html" title="hb-ot-name">hb-ot-name</a>
 </dt>
 <dd></dd>
@@ -1644,6 +2031,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#hb-ot-shape-plan-collect-lookups" title="hb_ot_shape_plan_collect_lookups ()">hb_ot_shape_plan_collect_lookups</a>, function in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-ot-tags-from-script" title="hb_ot_tags_from_script ()">hb_ot_tags_from_script</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1667,6 +2058,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-ot-tag-from-language" title="hb_ot_tag_from_language ()">hb_ot_tag_from_language</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-layout.html#HB-OT-TAG-GDEF:CAPS" title="HB_OT_TAG_GDEF">HB_OT_TAG_GDEF</a>, macro in <a class="link" href="harfbuzz-hb-ot-layout.html" title="hb-ot-layout">hb-ot-layout</a>
 </dt>
 <dd></dd>
@@ -1684,6 +2079,10 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-ot-math.html#HB-OT-TAG-MATH:CAPS" title="HB_OT_TAG_MATH">HB_OT_TAG_MATH</a>, macro in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-ot-math.html#HB-OT-TAG-MATH-SCRIPT:CAPS" title="HB_OT_TAG_MATH_SCRIPT">HB_OT_TAG_MATH_SCRIPT</a>, macro in <a class="link" href="harfbuzz-hb-ot-math.html" title="hb-ot-math">hb-ot-math</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1727,7 +2126,15 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-ot-var-find-axis" title="hb_ot_var_find_axis ()">hb_ot_var_find_axis</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-ot-var.html#hb-ot-var-find-axis-info" title="hb_ot_var_find_axis_info ()">hb_ot_var_find_axis_info</a>, function in <a class="link" href="harfbuzz-hb-ot-var.html" title="hb-ot-var">hb-ot-var</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-ot-var-get-axes" title="hb_ot_var_get_axes ()">hb_ot_var_get_axes</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1771,6 +2178,218 @@
 </dt>
 <dd></dd>
 <a name="idxP"></a><h3 class="title">P</h3>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-color" title="hb_paint_color ()">hb_paint_color</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-color-func-t" title="hb_paint_color_func_t ()">hb_paint_color_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-composite-mode-t" title="enum hb_paint_composite_mode_t">hb_paint_composite_mode_t</a>, enum in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-custom-palette-color" title="hb_paint_custom_palette_color ()">hb_paint_custom_palette_color</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-custom-palette-color-func-t" title="hb_paint_custom_palette_color_func_t ()">hb_paint_custom_palette_color_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-extend-t" title="enum hb_paint_extend_t">hb_paint_extend_t</a>, enum in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-create" title="hb_paint_funcs_create ()">hb_paint_funcs_create</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-destroy" title="hb_paint_funcs_destroy ()">hb_paint_funcs_destroy</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-get-empty" title="hb_paint_funcs_get_empty ()">hb_paint_funcs_get_empty</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-get-user-data" title="hb_paint_funcs_get_user_data ()">hb_paint_funcs_get_user_data</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-is-immutable" title="hb_paint_funcs_is_immutable ()">hb_paint_funcs_is_immutable</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-make-immutable" title="hb_paint_funcs_make_immutable ()">hb_paint_funcs_make_immutable</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-reference" title="hb_paint_funcs_reference ()">hb_paint_funcs_reference</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-color-func" title="hb_paint_funcs_set_color_func ()">hb_paint_funcs_set_color_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-custom-palette-color-func" title="hb_paint_funcs_set_custom_palette_color_func ()">hb_paint_funcs_set_custom_palette_color_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-image-func" title="hb_paint_funcs_set_image_func ()">hb_paint_funcs_set_image_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-linear-gradient-func" title="hb_paint_funcs_set_linear_gradient_func ()">hb_paint_funcs_set_linear_gradient_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-pop-clip-func" title="hb_paint_funcs_set_pop_clip_func ()">hb_paint_funcs_set_pop_clip_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-pop-group-func" title="hb_paint_funcs_set_pop_group_func ()">hb_paint_funcs_set_pop_group_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-pop-transform-func" title="hb_paint_funcs_set_pop_transform_func ()">hb_paint_funcs_set_pop_transform_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-push-clip-glyph-func" title="hb_paint_funcs_set_push_clip_glyph_func ()">hb_paint_funcs_set_push_clip_glyph_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-push-clip-rectangle-func" title="hb_paint_funcs_set_push_clip_rectangle_func ()">hb_paint_funcs_set_push_clip_rectangle_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-push-group-func" title="hb_paint_funcs_set_push_group_func ()">hb_paint_funcs_set_push_group_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-push-transform-func" title="hb_paint_funcs_set_push_transform_func ()">hb_paint_funcs_set_push_transform_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-radial-gradient-func" title="hb_paint_funcs_set_radial_gradient_func ()">hb_paint_funcs_set_radial_gradient_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-sweep-gradient-func" title="hb_paint_funcs_set_sweep_gradient_func ()">hb_paint_funcs_set_sweep_gradient_func</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-set-user-data" title="hb_paint_funcs_set_user_data ()">hb_paint_funcs_set_user_data</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-funcs-t" title="hb_paint_funcs_t">hb_paint_funcs_t</a>, typedef in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-image" title="hb_paint_image ()">hb_paint_image</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#HB-PAINT-IMAGE-FORMAT-BGRA:CAPS" title="HB_PAINT_IMAGE_FORMAT_BGRA">HB_PAINT_IMAGE_FORMAT_BGRA</a>, macro in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#HB-PAINT-IMAGE-FORMAT-PNG:CAPS" title="HB_PAINT_IMAGE_FORMAT_PNG">HB_PAINT_IMAGE_FORMAT_PNG</a>, macro in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#HB-PAINT-IMAGE-FORMAT-SVG:CAPS" title="HB_PAINT_IMAGE_FORMAT_SVG">HB_PAINT_IMAGE_FORMAT_SVG</a>, macro in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-image-func-t" title="hb_paint_image_func_t ()">hb_paint_image_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-linear-gradient" title="hb_paint_linear_gradient ()">hb_paint_linear_gradient</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-linear-gradient-func-t" title="hb_paint_linear_gradient_func_t ()">hb_paint_linear_gradient_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-pop-clip" title="hb_paint_pop_clip ()">hb_paint_pop_clip</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-pop-clip-func-t" title="hb_paint_pop_clip_func_t ()">hb_paint_pop_clip_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-pop-group" title="hb_paint_pop_group ()">hb_paint_pop_group</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-pop-group-func-t" title="hb_paint_pop_group_func_t ()">hb_paint_pop_group_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-pop-transform" title="hb_paint_pop_transform ()">hb_paint_pop_transform</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-pop-transform-func-t" title="hb_paint_pop_transform_func_t ()">hb_paint_pop_transform_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-clip-glyph" title="hb_paint_push_clip_glyph ()">hb_paint_push_clip_glyph</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-clip-glyph-func-t" title="hb_paint_push_clip_glyph_func_t ()">hb_paint_push_clip_glyph_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-clip-rectangle" title="hb_paint_push_clip_rectangle ()">hb_paint_push_clip_rectangle</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-clip-rectangle-func-t" title="hb_paint_push_clip_rectangle_func_t ()">hb_paint_push_clip_rectangle_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-group" title="hb_paint_push_group ()">hb_paint_push_group</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-group-func-t" title="hb_paint_push_group_func_t ()">hb_paint_push_group_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-transform" title="hb_paint_push_transform ()">hb_paint_push_transform</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-push-transform-func-t" title="hb_paint_push_transform_func_t ()">hb_paint_push_transform_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-radial-gradient" title="hb_paint_radial_gradient ()">hb_paint_radial_gradient</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-radial-gradient-func-t" title="hb_paint_radial_gradient_func_t ()">hb_paint_radial_gradient_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-sweep-gradient" title="hb_paint_sweep_gradient ()">hb_paint_sweep_gradient</a>, function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-paint.html#hb-paint-sweep-gradient-func-t" title="hb_paint_sweep_gradient_func_t ()">hb_paint_sweep_gradient_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-paint.html" title="hb-paint">hb-paint</a>
+</dt>
+<dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-common.html#hb-position-t" title="hb_position_t">hb_position_t</a>, typedef in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
 </dt>
@@ -1818,6 +2437,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-buffer.html#hb-segment-properties-overlay" title="hb_segment_properties_overlay ()">hb_segment_properties_overlay</a>, function in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-buffer.html#hb-segment-properties-t" title="hb_segment_properties_t">hb_segment_properties_t</a>, struct in <a class="link" href="harfbuzz-hb-buffer.html" title="hb-buffer">hb-buffer</a>
 </dt>
 <dd></dd>
@@ -1830,11 +2453,19 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-set.html#hb-set-add-sorted-array" title="hb_set_add_sorted_array ()">hb_set_add_sorted_array</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-set.html#hb-set-allocation-successful" title="hb_set_allocation_successful ()">hb_set_allocation_successful</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-set.html#hb-set-clear" title="hb_set_clear ()">hb_set_clear</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-set.html#hb-set-copy" title="hb_set_copy ()">hb_set_copy</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1878,7 +2509,15 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-set.html#hb-set-hash" title="hb_set_hash ()">hb_set_hash</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-set.html#hb-set-intersect" title="hb_set_intersect ()">hb_set_intersect</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-set.html#hb-set-invert" title="hb_set_invert ()">hb_set_invert</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1890,11 +2529,19 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-set.html#hb-set-is-inverted" title="hb_set_is_inverted ()">hb_set_is_inverted</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-set.html#hb-set-is-subset" title="hb_set_is_subset ()">hb_set_is_subset</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-set.html#hb-set-next" title="hb_set_next ()">hb_set_next</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-set.html#hb-set-next-many" title="hb_set_next_many ()">hb_set_next_many</a>, function in <a class="link" href="harfbuzz-hb-set.html" title="hb-set">hb-set</a>
 </dt>
 <dd></dd>
 <dt>
@@ -1950,6 +2597,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-shape.html#hb-shape-justify" title="hb_shape_justify ()">hb_shape_justify</a>, function in <a class="link" href="harfbuzz-hb-shape.html" title="hb-shape">hb-shape</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-shape.html#hb-shape-list-shapers" title="hb_shape_list_shapers ()">hb_shape_list_shapers</a>, function in <a class="link" href="harfbuzz-hb-shape.html" title="hb-shape">hb-shape</a>
 </dt>
 <dd></dd>
@@ -2001,6 +2652,130 @@
 <a class="link" href="harfbuzz-hb-shape-plan.html#hb-shape-plan-t" title="hb_shape_plan_t">hb_shape_plan_t</a>, typedef in <a class="link" href="harfbuzz-hb-shape-plan.html" title="hb-shape-plan">hb-shape-plan</a>
 </dt>
 <dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-style.html#hb-style-get-value" title="hb_style_get_value ()">hb_style_get_value</a>, function in <a class="link" href="harfbuzz-hb-style.html" title="hb-style">hb-style</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-style.html#hb-style-tag-t" title="enum hb_style_tag_t">hb_style_tag_t</a>, enum in <a class="link" href="harfbuzz-hb-style.html" title="hb-style">hb-style</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-flags-t" title="enum hb_subset_flags_t">hb_subset_flags_t</a>, enum in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-create-or-fail" title="hb_subset_input_create_or_fail ()">hb_subset_input_create_or_fail</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-destroy" title="hb_subset_input_destroy ()">hb_subset_input_destroy</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-get-flags" title="hb_subset_input_get_flags ()">hb_subset_input_get_flags</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-get-user-data" title="hb_subset_input_get_user_data ()">hb_subset_input_get_user_data</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-glyph-set" title="hb_subset_input_glyph_set ()">hb_subset_input_glyph_set</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-keep-everything" title="hb_subset_input_keep_everything ()">hb_subset_input_keep_everything</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-old-to-new-glyph-mapping" title="hb_subset_input_old_to_new_glyph_mapping ()">hb_subset_input_old_to_new_glyph_mapping</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-pin-axis-location" title="hb_subset_input_pin_axis_location ()">hb_subset_input_pin_axis_location</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-pin-axis-to-default" title="hb_subset_input_pin_axis_to_default ()">hb_subset_input_pin_axis_to_default</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-reference" title="hb_subset_input_reference ()">hb_subset_input_reference</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-set" title="hb_subset_input_set ()">hb_subset_input_set</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-set-flags" title="hb_subset_input_set_flags ()">hb_subset_input_set_flags</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-set-user-data" title="hb_subset_input_set_user_data ()">hb_subset_input_set_user_data</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-t" title="hb_subset_input_t">hb_subset_input_t</a>, typedef in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-input-unicode-set" title="hb_subset_input_unicode_set ()">hb_subset_input_unicode_set</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-or-fail" title="hb_subset_or_fail ()">hb_subset_or_fail</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-create-or-fail" title="hb_subset_plan_create_or_fail ()">hb_subset_plan_create_or_fail</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-destroy" title="hb_subset_plan_destroy ()">hb_subset_plan_destroy</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-execute-or-fail" title="hb_subset_plan_execute_or_fail ()">hb_subset_plan_execute_or_fail</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-get-user-data" title="hb_subset_plan_get_user_data ()">hb_subset_plan_get_user_data</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-new-to-old-glyph-mapping" title="hb_subset_plan_new_to_old_glyph_mapping ()">hb_subset_plan_new_to_old_glyph_mapping</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-old-to-new-glyph-mapping" title="hb_subset_plan_old_to_new_glyph_mapping ()">hb_subset_plan_old_to_new_glyph_mapping</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-reference" title="hb_subset_plan_reference ()">hb_subset_plan_reference</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-set-user-data" title="hb_subset_plan_set_user_data ()">hb_subset_plan_set_user_data</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-t" title="hb_subset_plan_t">hb_subset_plan_t</a>, typedef in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-plan-unicode-to-old-glyph-mapping" title="hb_subset_plan_unicode_to_old_glyph_mapping ()">hb_subset_plan_unicode_to_old_glyph_mapping</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-preprocess" title="hb_subset_preprocess ()">hb_subset_preprocess</a>, function in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-subset.html#hb-subset-sets-t" title="enum hb_subset_sets_t">hb_subset_sets_t</a>, enum in <a class="link" href="harfbuzz-hb-subset.html" title="hb-subset">hb-subset</a>
+</dt>
+<dd></dd>
 <a name="idxT"></a><h3 class="title">T</h3>
 <dt>
 <a class="link" href="harfbuzz-hb-common.html#HB-TAG:CAPS" title="HB_TAG()">HB_TAG</a>, macro in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
@@ -2036,6 +2811,10 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#HB-UNICODE-COMBINING-CLASS-CCC133:CAPS" title="HB_UNICODE_COMBINING_CLASS_CCC133">HB_UNICODE_COMBINING_CLASS_CCC133</a>, macro in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-unicode.html#hb-unicode-combining-class-func-t" title="hb_unicode_combining_class_func_t ()">hb_unicode_combining_class_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-unicode.html" title="hb-unicode">hb-unicode</a>
 </dt>
 <dd></dd>
@@ -2056,11 +2835,19 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-unicode-decompose-compatibility" title="hb_unicode_decompose_compatibility ()">hb_unicode_decompose_compatibility</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-deprecated.html#hb-unicode-decompose-compatibility-func-t" title="hb_unicode_decompose_compatibility_func_t ()">hb_unicode_decompose_compatibility_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-unicode.html#hb-unicode-decompose-func-t" title="hb_unicode_decompose_func_t ()">hb_unicode_decompose_func_t</a>, user_function in <a class="link" href="harfbuzz-hb-unicode.html" title="hb-unicode">hb-unicode</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-unicode-eastasian-width" title="hb_unicode_eastasian_width ()">hb_unicode_eastasian_width</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2112,7 +2899,15 @@
 </dt>
 <dd></dd>
 <dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-unicode-funcs-set-decompose-compatibility-func" title="hb_unicode_funcs_set_decompose_compatibility_func ()">hb_unicode_funcs_set_decompose_compatibility_func</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
+</dt>
+<dd></dd>
+<dt>
 <a class="link" href="harfbuzz-hb-unicode.html#hb-unicode-funcs-set-decompose-func" title="hb_unicode_funcs_set_decompose_func ()">hb_unicode_funcs_set_decompose_func</a>, function in <a class="link" href="harfbuzz-hb-unicode.html" title="hb-unicode">hb-unicode</a>
+</dt>
+<dd></dd>
+<dt>
+<a class="link" href="harfbuzz-hb-deprecated.html#hb-unicode-funcs-set-eastasian-width-func" title="hb_unicode_funcs_set_eastasian_width_func ()">hb_unicode_funcs_set_eastasian_width_func</a>, function in <a class="link" href="harfbuzz-hb-deprecated.html" title="hb-deprecated">hb-deprecated</a>
 </dt>
 <dd></dd>
 <dt>
@@ -2198,10 +2993,6 @@
 <dd></dd>
 <dt>
 <a class="link" href="harfbuzz-hb-common.html#hb-variation-to-string" title="hb_variation_to_string ()">hb_variation_to_string</a>, function in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
-</dt>
-<dd></dd>
-<dt>
-<a class="link" href="harfbuzz-hb-common.html#hb-var-int-t" title="hb_var_int_t">hb_var_int_t</a>, union in <a class="link" href="harfbuzz-hb-common.html" title="hb-common">hb-common</a>
 </dt>
 <dd></dd>
 <dt>
