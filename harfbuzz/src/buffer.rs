@@ -10,7 +10,7 @@
 use std;
 use sys;
 
-use {Direction, Language};
+use crate::{Direction, Language};
 
 /// A series of Unicode characters.
 ///
