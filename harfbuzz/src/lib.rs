@@ -31,3 +31,9 @@ pub use self::language::Language;
 
 mod blob;
 pub use self::blob::Blob;
+
+mod face;
+pub use self::face::Face;
+
+mod font;
+pub use self::font::Font;
