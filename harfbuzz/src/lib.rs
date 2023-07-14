@@ -37,3 +37,9 @@ pub use self::face::Face;
 
 mod font;
 pub use self::font::Font;
+
+mod shape;
+pub use self::shape::hb_shape;
+
+mod feature;
+pub use self::feature::Feature;

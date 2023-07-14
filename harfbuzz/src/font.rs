@@ -33,7 +33,7 @@ impl<'a> Font<'a> {
     /// ```
     pub fn new(face: &Face) -> Font<'static> {
         unsafe {
-            let font = sys::hb_font_create(face.as_raw());
+            let font = sys::hb_font_create(face.as_ptr());
             Font::from_raw(font)
         }
     }
@@ -111,7 +111,7 @@ impl<'a> Font<'a> {
     }
 
     /// Borrows a raw pointer to the font.
-    pub fn as_raw(&self) -> *mut sys::hb_font_t {
+    pub fn as_ptr(&self) -> *mut sys::hb_font_t {
         self.raw
     }
 

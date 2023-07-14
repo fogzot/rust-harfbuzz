@@ -105,7 +105,7 @@ impl<'a> Face<'a> {
     }
 
     /// Borrows a raw pointer to the face.
-    pub fn as_raw(&self) -> *mut sys::hb_face_t {
+    pub fn as_ptr(&self) -> *mut sys::hb_face_t {
         self.raw
     }
 

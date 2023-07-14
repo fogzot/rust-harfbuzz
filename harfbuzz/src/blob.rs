@@ -142,7 +142,7 @@ impl<'a> Blob<'a> {
     }
 
     /// Borrows a raw pointer to the blob.
-    pub fn as_raw(&self) -> *mut sys::hb_blob_t {
+    pub fn as_ptr(&self) -> *mut sys::hb_blob_t {
         self.raw
     }
 
