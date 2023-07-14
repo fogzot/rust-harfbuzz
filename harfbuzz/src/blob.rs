@@ -86,6 +86,31 @@ impl<'a> Blob<'a> {
         }
     }
 
+    /// Create a blob with data read from a file.
+    ///
+    /// This method allows creation of a blob by read a file localted at
+    /// the path provided as argument. The whole file is read into a
+    /// `Vec<u8>` owned by the blob. The `Vec` is freed when the
+    /// reference to the `Blob` is dropped.
+    ///
+    /// ```
+    /// # use harfbuzz::Blob;
+    /// let blob = Blob::new_from_file(".././harfbuzz-sys/harfbuzz/test/api/fonts/SourceSansPro-Regular.otf").unwrap();
+    /// assert_eq!(blob.len(), 220852);
+    /// assert!(!blob.is_empty());
+    /// ```
+    pub fn new_from_file(path: &str) -> Option<Blob<'static>> {
+        unsafe {
+            if let Ok(file_name) = std::ffi::CString::new(path) {
+                let hb_blob = sys::hb_blob_create_from_file_or_fail(file_name.as_ptr());
+                if !hb_blob.is_null() {
+                    return Some(Blob::from_raw(hb_blob));
+                }
+            }
+        }
+        None
+    }
+
     /// Construct a `Blob` from a raw pointer. Takes ownership of the blob.
     pub unsafe fn from_raw(raw: *mut sys::hb_blob_t) -> Self {
         Blob {
