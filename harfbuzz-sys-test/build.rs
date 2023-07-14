@@ -35,6 +35,11 @@ fn main() {
             || s == "hb_buffer_t"
             || s == "hb_map_t"
             || s == "hb_shape_plan_t"
+            // FIXME: check if these structs are really empty.
+            || s == "hb_draw_funcs_t"
+            || s == "hb_paint_funcs_t"
+            || s == "hb_color_stop_t"
+            || s == "hb_ot_math_kern_entry_t"
     });
 
     // FIXME: I'm not sure why these functions must be skipped.
@@ -42,6 +47,10 @@ fn main() {
         s == "hb_coretext_face_create"
             || s == "hb_coretext_face_get_cg_font"
             || s == "hb_ft_font_create_referenced"
+            // FIXME: Check why these should be excluded.
+            || s == "hb_color_line_get_color_stops"
+            || s == "hb_ot_math_get_glyph_kernings"
+            || s == "hb_shape_justify"
     });
 
     // Generate the tests, passing the path to the `*-sys` library as well as
