@@ -95,7 +95,7 @@ impl<'a> Blob<'a> {
     ///
     /// ```
     /// # use harfbuzz::Blob;
-    /// let blob = Blob::new_from_file(".././harfbuzz-sys/harfbuzz/test/api/fonts/SourceSansPro-Regular.otf").unwrap();
+    /// let blob = Blob::new_from_file("../harfbuzz-sys/harfbuzz/test/api/fonts/SourceSansPro-Regular.otf").unwrap();
     /// assert_eq!(blob.len(), 220852);
     /// assert!(!blob.is_empty());
     /// ```
@@ -183,6 +183,14 @@ impl<'a> Drop for Blob<'a> {
     fn drop(&mut self) {
         unsafe {
             sys::hb_blob_destroy(self.raw);
+        }
+    }
+}
+
+impl<'a> Clone for Blob<'a> {
+    fn clone(&self) -> Self {
+        unsafe {
+            Self { raw: sys::hb_blob_reference(self.raw), phantom: PhantomData }
         }
     }
 }
