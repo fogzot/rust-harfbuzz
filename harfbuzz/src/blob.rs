@@ -26,8 +26,7 @@ pub struct Blob<'a> {
 impl<'a> Blob<'a> {
     /// Create a new read-only blob.
     ///
-    /// The data is not copied, so it must outlive the
-    /// `Blob`.
+    /// The data is not copied, so it must outlive the `Blob`.
     ///
     /// ```
     /// # use harfbuzz::Blob;
@@ -88,10 +87,8 @@ impl<'a> Blob<'a> {
 
     /// Create a blob with data read from a file.
     ///
-    /// This method allows creation of a blob by read a file localted at
-    /// the path provided as argument. The whole file is read into a
-    /// `Vec<u8>` owned by the blob. The `Vec` is freed when the
-    /// reference to the `Blob` is dropped.
+    /// This method allows creation of a blob from the file located at
+    /// the path provided as argument.
     ///
     /// ```
     /// # use harfbuzz::Blob;
@@ -99,16 +96,16 @@ impl<'a> Blob<'a> {
     /// assert_eq!(blob.len(), 220852);
     /// assert!(!blob.is_empty());
     /// ```
-    pub fn new_from_file(path: &str) -> Option<Blob<'static>> {
+    pub fn new_from_file(path: &str) -> Result<Blob<'static>, super::ErrorKind> {
         unsafe {
             if let Ok(file_name) = std::ffi::CString::new(path) {
                 let hb_blob = sys::hb_blob_create_from_file_or_fail(file_name.as_ptr());
                 if !hb_blob.is_null() {
-                    return Some(Blob::from_raw(hb_blob));
+                    return Ok(Blob::from_raw(hb_blob));
                 }
             }
         }
-        None
+        Err(super::ErrorKind::HbFailure)
     }
 
     /// Construct a `Blob` from a raw pointer. Takes ownership of the blob.
@@ -147,6 +144,9 @@ impl<'a> Blob<'a> {
     }
 
     /// Gives up ownership and returns a raw pointer to the blob.
+    ///
+    /// Note that the raw blob is not dereferenced and `hb_blob_destroy`
+    /// should eventually be called on it to avoid leaking memory.
     pub fn into_raw(self) -> *mut sys::hb_blob_t {
         let raw = self.raw;
         mem::forget(self);
@@ -188,6 +188,7 @@ impl<'a> Drop for Blob<'a> {
 }
 
 impl<'a> Clone for Blob<'a> {
+    /// Clone the blob and increments its reference count.
     fn clone(&self) -> Self {
         unsafe {
             Self { raw: sys::hb_blob_reference(self.raw), phantom: PhantomData }

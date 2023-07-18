@@ -8,6 +8,7 @@
 // except according to those terms.
 
 use std;
+use bitflags::bitflags;
 use sys;
 
 use crate::{Direction, Language};
@@ -120,6 +121,44 @@ impl Buffer {
         b
     }
 
+    /// Add single Unicode codepoint to the buffer.
+    pub fn add(&mut self, codepoint: u32, cluster: u32) {
+        unsafe {
+            sys::hb_buffer_add(
+                self.raw,
+                codepoint,
+                cluster,
+            )
+        };
+    }
+
+    /// Add Unicode codepoints to the buffer.
+    pub fn add_utf32(&mut self, codepoints: &[char]) {
+        unsafe {
+            sys::hb_buffer_add_utf32(
+                self.raw,
+                codepoints.as_ptr() as *const u32,
+                codepoints.len() as std::os::raw::c_int,
+                0,
+                codepoints.len() as std::os::raw::c_int,
+            )
+        };
+    }
+
+    /// Add Unicode codepoints to the buffer.
+    pub fn add_utf32_full(&mut self, codepoints: &[char], offset: u32, length: i32) {
+        assert!(offset as i32 + length <= codepoints.len() as i32);
+        unsafe {
+            sys::hb_buffer_add_utf32(
+                self.raw,
+                codepoints.as_ptr() as *const u32,
+                codepoints.len() as std::os::raw::c_int,
+                offset,
+                length,
+            )
+        };
+    }
+
     /// Add UTF-8 encoded text to the buffer.
     pub fn add_str(&mut self, text: &str) {
         unsafe {
@@ -129,6 +168,20 @@ impl Buffer {
                 text.len() as std::os::raw::c_int,
                 0,
                 text.len() as std::os::raw::c_int,
+            )
+        };
+    }
+
+    /// Add UTF-8 encoded text to the buffer.
+    pub fn add_str_full(&mut self, text: &str, offset: u32, length: i32) {
+        assert!(offset as i32 + length <= text.len() as i32);
+        unsafe {
+            sys::hb_buffer_add_utf8(
+                self.raw,
+                text.as_ptr() as *const std::os::raw::c_char,
+                text.len() as std::os::raw::c_int,
+                offset,
+                length,
             )
         };
     }
@@ -169,9 +222,9 @@ impl Buffer {
 
     /// Preallocate space to fit at least *size* number of items.
     ///
-    /// FIXME: Does this correctly match the expected semantics?
-    pub fn reserve(&mut self, size: usize) {
-        unsafe { sys::hb_buffer_pre_allocate(self.raw, size as u32) };
+    /// Returns `true` if buffer memory allocation succeeded, `false` otherwise.
+    pub fn reserve(&mut self, size: usize) -> bool {
+        unsafe { sys::hb_buffer_pre_allocate(self.raw, size as u32) != 0 }
     }
 
     /// Returns the number of elements in the buffer, also referred to as its 'length'.
@@ -298,6 +351,35 @@ impl Buffer {
     pub fn get_language(&self) -> Language {
         unsafe { Language::from_raw(sys::hb_buffer_get_language(self.raw)) }
     }
+
+    /// Sets buffer flags to `flags`.
+    pub fn set_flags(&self, flags: BufferFlags) {
+        unsafe {
+            sys::hb_buffer_set_flags(self.as_ptr(), flags.bits());
+        }
+    }
+
+    /// Gets buffer flags.
+    pub fn get_flags(&self) -> BufferFlags {
+        unsafe {
+            BufferFlags::from_bits(sys::hb_buffer_get_flags(self.as_ptr())).unwrap()
+        }
+    }
+
+    /// Sets buffer cluster level to `level`.
+    pub fn set_cluster_level(&self, level: BufferClusterLevel) {
+        unsafe {
+            sys::hb_buffer_set_cluster_level(self.as_ptr(), level.bits());
+        }
+    }
+
+    /// Gets buffer flags.
+    pub fn get_cluster_level(&self) -> BufferClusterLevel {
+        unsafe {
+            BufferClusterLevel::from_bits(sys::hb_buffer_get_cluster_level(self.as_ptr())).unwrap()
+        }
+    }
+
 }
 
 impl std::fmt::Debug for Buffer {
@@ -322,5 +404,64 @@ impl Default for Buffer {
 impl Drop for Buffer {
     fn drop(&mut self) {
         unsafe { sys::hb_buffer_destroy(self.raw) }
+    }
+}
+
+bitflags! {
+    /// Buffer flags.
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    pub struct BufferFlags: u32 {
+        /// The default buffer flag.
+        const DEFAULT = sys::HB_BUFFER_FLAG_DEFAULT;
+        /// Flag indicating that special handling of the beginning of text paragraph
+        /// can be applied to this buffer. Should usually be set, unless you are
+        /// passing to the buffer only part of the text without the full context.
+        const BOT = sys::HB_BUFFER_FLAG_BOT;
+        /// Flag indicating that special handling of the end of text paragraph can
+        /// be applied to this buffer, similar to `BOT`.
+        const EOT = sys::HB_BUFFER_FLAG_EOT;
+        /// Flag indication that character with Default_Ignorable Unicode property
+        /// should use the corresponding glyph from the font, instead of hiding them
+        /// (done by replacing them with the space glyph and zeroing the advance width.)
+        /// This flag takes precedence over `REMOVE_DEFAULT_IGNORABLES`.
+        const PRESERVE_DEFAULT_IGNORABLES = sys::HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES;
+        /// Flag indication that character with Default_Ignorable Unicode property
+        /// should be removed from glyph string instead of hiding them (done by
+        /// replacing them with the space glyph and zeroing the advance width.)
+        /// `PRESERVE_DEFAULT_IGNORABLES` takes precedence over this flag.
+        const REMOVE_DEFAULT_IGNORABLES = sys::HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES;
+        /// Flag indicating that a dotted circle should not be inserted in the
+        /// rendering of incorrect character sequences (such at <0905 093E>).
+        const DO_NOT_INSERT_DOTTED_CIRCLE = sys::HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE;
+        /// Flag indicating that the `hb_shape()` call and its variants should
+        /// perform various verification processes on the results of the shaping
+        /// operation on the buffer. If the verification fails, then either a
+        /// buffer message is sent, if a message handler is installed on the
+        /// buffer, or a message is written to standard error. In either case,
+        /// the shaping result might be modified to show the failed output.
+        const VERIFY = sys::HB_BUFFER_FLAG_VERIFY;
+        /// Flag indicating that the `GlyphFlag.UNSAFE_TO_CONCAT` glyph-flag
+        /// should be produced by the shaper. By default it will not be produced
+        /// since it incurs a cost.
+        const PRODUCE_UNSAFE_TO_CONCAT = sys::HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT;
+        /// Flag indicating that the `GlyphFDlag.SAFE_TO_INSERT_TATWEEL`
+        /// glyph-flag should be produced by the shaper. By default it will not
+        /// be produced.
+        const PRODUCE_SAFE_TO_INSERT_TATWEEL = sys::HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL;
+    }
+}
+
+bitflags! {
+    /// Buffer cluster level.
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    pub struct BufferClusterLevel: u32 {
+        /// Return cluster values grouped by graphemes into monotone order.
+        const MONOTONE_GRAPHEMES = sys::HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES;
+        /// Return cluster values grouped into monotone order.
+        const MONOTONE_CHARACTERS = sys::HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS;
+        /// Don't group cluster values.
+        const CHARACTERS = sys::HB_BUFFER_CLUSTER_LEVEL_CHARACTERS;
+        /// Default cluster level, equal to `MONOTONE_GRAPHEMES`.
+        const DEFAULT = sys::HB_BUFFER_CLUSTER_LEVEL_DEFAULT;
     }
 }

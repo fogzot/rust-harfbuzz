@@ -21,7 +21,7 @@
 pub extern crate harfbuzz_sys as sys;
 
 mod buffer;
-pub use self::buffer::Buffer;
+pub use self::buffer::{Buffer, BufferFlags, BufferClusterLevel};
 
 mod direction;
 pub use self::direction::Direction;
@@ -39,7 +39,17 @@ mod font;
 pub use self::font::Font;
 
 mod shape;
-pub use self::shape::hb_shape;
+pub use self::shape::{hb_shape, ShapedBuffer};
 
 mod feature;
 pub use self::feature::Feature;
+
+mod tag;
+pub use self::tag::Tag;
+
+/// Describe the possible errore for functions that return a `Result`.
+#[derive(Debug)]
+pub enum ErrorKind {
+    /// An hb_XXX_fail method failed without reporting more information.
+    HbFailure
+}

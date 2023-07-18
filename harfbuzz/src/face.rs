@@ -49,9 +49,9 @@ impl<'a> Face<'a> {
     /// let face = Face::new_from_file("../harfbuzz-sys/harfbuzz/test/api/fonts/SourceSansPro-Regular.otf", 0).unwrap();
     /// assert_eq!(face.get_glyph_count(), 1942);
     /// ```
-    pub fn new_from_file(path: &str, index: u32) -> Option<Face<'static>> {
+    pub fn new_from_file(path: &str, index: u32) -> Result<Face<'static>, super::ErrorKind> {
         let blob = Blob::new_from_file(path)?;
-        Some(Face::new(blob, index))
+        Ok(Face::new(blob, index))
     }
 
     /// Construct a `Face` from a raw pointer. Takes ownership of the face.
@@ -118,7 +118,8 @@ impl<'a> Face<'a> {
 }
 
 impl<'a> Drop for Face<'a> {
-    /// Decrement the reference count, and destroy the face if the reference count is zero.
+    /// Decrement the reference count, and destroy the face if the
+    /// reference count is zero.
     fn drop(&mut self) {
         unsafe {
             sys::hb_face_destroy(self.raw);
